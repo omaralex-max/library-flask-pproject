@@ -1,0 +1,14 @@
+.background-wrapper {
+    background-image: url('/static/images/library.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);  /* Adjust opacity by changing the alpha value (0.5 for 50%) */
+}
+
+footer{
+    text-align: center;
+}

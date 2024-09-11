@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Background wrapper with a background image -->
+<div class="background-wrapper" style="position: relative;">
+    <!-- Semi-transparent overlay for background opacity -->
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+        <br><br>
+        <br><br>
+
+        <div class="row">
+            {% for book in books %}
+            <div class="col-md-3 mb-4">
+                <div class="card" style="width: 14rem;"> 
+                    <img src="{{ book.cover_url }}" class="card-img-top" alt="{{ book.title }}" style="height: 180px; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ book.title }}</h6> 
+                        <p class="card-text">Author: {{ book.author }}</p>
+                        <p class="card-text" style="height: 60px; overflow: hidden;">{{ book.description[:100] }}...</p> 
+                        <a href="{{ book.show_url }}" class="btn btn-warning btn-sm">Details</a> 
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
